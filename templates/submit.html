@@ -1,0 +1,51 @@
+<style type="text/css" media="screen">
+    .center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+    }
+    div {text-align: center;}
+</style>
+<a href="/submitgame">SELECT GAME</a>
+<div class="center">
+    SUBMIT YOUR TIME DAWG
+<form method="POST">
+    {{ form.csrf_token }}
+    <div>{{ form.username.label }}: {{ form.username(size=20) }}</div>
+    {% if form.username.errors %}
+        <ul class="errors">{% for error in form.username.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+    {% endif %}
+    <div>{{ form.secret_code.label }}: {{ form.secret_code(size=20) }}</div>
+    {% if form.secret_code.errors %}
+        <ul class="errors">{% for error in form.secret_code.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+    {% endif %}
+    <div>{{ form.track.label }}: {{ form.track(size=1) }}</div>
+    {% if form.track.errors %}
+        <ul class="errors">{% for error in form.track.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+    {% endif %}
+    <div>{{ form.time.label }}: {{ form.time(size=20) }}</div>
+    {% if form.time.errors %}
+        <ul class="errors">{% for error in form.time.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+    {% endif %}
+    <div>Lap Times</div>
+    <div>{{ form.lap1.label }}: {{ form.lap1(size=20) }}</div>
+    {% if form.lap1.errors %}
+        <ul class="errors">{% for error in form.lap1.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+    {% endif %}
+    <div>{{ form.lap2.label }}: {{ form.lap2(size=20) }}</div>
+    {% if form.lap2.errors %}
+        <ul class="errors">{% for error in form.lap2.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+    {% endif %}
+    <div>{{ form.lap3.label }}: {{ form.lap3(size=20) }}</div>
+    {% if form.lap3.errors %}
+        <ul class="errors">{% for error in form.lap3.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+    {% endif %}
+    <div>{{ form.proof.label }}: {{ form.proof(size=20) }}</div>
+    {% if form.proof.errors %}
+        <ul class="errors">{% for error in form.proof.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+    {% endif %}
+    <input type="submit" value="SUBMIT IT">
+</form>
+</div>

@@ -1,0 +1,22 @@
+<style type="text/css" media="screen">
+    .center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+    }
+    div {text-align: center;}
+</style>
+<a href="/">HOME</a>
+<div class="center">
+    SELECT DA SECTION
+<form method="POST">
+    {{ form.csrf_token }}
+    <div>{{ form.field.label }}: {{ form.field(size=1) }}</div>
+    {% if form.field.errors %}
+        <ul class="errors">{% for error in form.field.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+    {% endif %}
+    <input type="submit" value="SELECT">
+</form>
+</div>

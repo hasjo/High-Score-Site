@@ -1,0 +1,5 @@
+sqlalchemy
+psycopg2
+flask
+flask-wtf
+WTForms

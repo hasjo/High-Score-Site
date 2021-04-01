@@ -1,0 +1,27 @@
+<style type="text/css" media="screen">
+    .center {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        padding: 10px;
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+        text-align: center;
+    }
+    div {text-align: center;}
+</style>
+<div>
+<a href="/leaderboard">LEADERBOARD</a>
+</div>
+<div class="center">{{ track_name }}
+    <table style="width:100%">
+        <tr><th>TIME</th><td>{{ time }}</td></tr>
+        <tr><th>LAP 1</th><td>{{ lap1 }}</td></tr>
+        <tr><th>LAP 2</th><td>{{ lap2 }}</td></tr>
+        <tr><th>LAP 3</th><td>{{ lap3 }}</td></tr>
+    </table>
+    <img src="{{ proof }}" alt="Proof Image" style="width:100%">
+</div>
